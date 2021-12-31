@@ -1,0 +1,20 @@
+th{
+    background-color: #ba68c8 !important;
+    color: white !important;
+    text-transform: uppercase;
+}
+
+th td{
+    text-align: center;
+}
+
+table{
+    border-spacing: 0;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(32, 32, 32, .3);
+}
+
+.container{
+    border: none;
+}
