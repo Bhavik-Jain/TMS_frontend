@@ -1,6 +1,30 @@
-import "./admin_edit_packages.css";
+import "./styles/admin_edit_packages.css";
+import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 function AdminEditPackages(){
+    const [name, setName] = useState('');
+    const [pacdetails, setPacdetails] = useState('');
+    const [price, setPrice] = useState('');
+    const [days, setDays] = useState('');
+    const [nights, setNights] = useState('');
+    const [status, setStatus] = useState('drafts');
+    
+    const navigate = useNavigate();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const pack = {name, pacdetails, price, days, nights, status};
+        // headers telling browser the type of data we are sending i.e, post
+        fetch('http://localhost:8000/packages', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(pack)
+        }).then(() => {
+            console.log('new package added');
+            navigate('/viewpackage');
+        })
+    }
     return(
         <>
             <div className="container mt-5">
@@ -8,44 +32,72 @@ function AdminEditPackages(){
                 <div className="row">
                     <div className="card">
                         <div className="card-body">
-                            <form>
+                            <form onSubmit={handleSubmit}>
+                            <div className="form-group">
+                                <label htmlFor="name">Package Name</label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    className="form-control"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}/>
+                                </div>
                                 <div className="form-group">
                                     <label>Image</label>
                                     <br />
                                     <input type="file" class="form-control-file"/>
                                 </div>
                                 <div className="form-group">
-                                    <label for="pd">Package Details</label>
-                                    <textarea class="form-control" id="pd" rows="1"></textarea>
+                                    <label htmlFor="pd">Package Details</label>
+                                    <textarea 
+                                        class="form-control"
+                                        value={pacdetails}
+                                        id="pd" rows="1"
+                                        onChange={(e) => setPacdetails(e.target.value)} >
+                                         </textarea>
                                 </div>
                                 <div className="form-group">
-                                    <label for="price">Price</label>
-                                    <input type="text" id="price" className="form-control"/>
+                                    <label htmlFor="price">Price</label>
+                                    <input 
+                                        type="text" 
+                                        id="price" 
+                                        className="form-control"
+                                        value={price}
+                                        onChange={(e) => setPrice(e.target.value)}/>
                                 </div>
                                 <div className="form-group">
-                                    <label for="days">No. of Days</label>
-                                    <input type="text" id="days" className="form-control"/>
+                                    <label htmlFor="days">No. of Days</label>
+                                    <input 
+                                        type="text" 
+                                        id="days" 
+                                        className="form-control"
+                                        value={days}
+                                        onChange={(e) => setDays(e.target.value)}/>
                                 </div>
                                 <div className="form-group">
-                                    <label for="nights">No of Nights</label>
-                                    <input type="text" id="nights" className="form-control"/>
+                                    <label htmlFor="nights">No of Nights</label>
+                                    <input 
+                                        type="text" 
+                                        id="nights" 
+                                        className="form-control"
+                                        value={nights}
+                                        onChange={(e) => setNights(e.target.value)}/>
                                 </div>
                                 <div className="form-group">
-                                    <label for="status">Status</label>
-                                    <select class="form-control" id="status">
+                                    <label htmlFor="status">Status</label>
+                                    <select class="form-control" id="status"
+                                        value={status}
+                                        onChange={(e) => setStatus(e.target.value)}>
                                         <option>Drafts</option>
                                         <option>Publish</option>
                                     </select>
                                 </div>
                                 <div className="form-group">
-                                    <input type="button" className="btn btn-primary mt-2" value="Submit" />
-                                </div>
-                                
+                                    <button className="btn btn-primary">Submit</button>
+                                </div>                         
                             </form>
                         </div>
-                        <div className="card-footer">
-                            
-                        </div>
+                        <div className="card-footer"></div>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import "./sidenav.css";
+import "./styles/sidenav.css";
 
 function Sidenav(){
     const openNav = () =>{
@@ -22,9 +22,9 @@ function Sidenav(){
             </header>
             <div className="sidenav" id="sidenav">
                 <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
-                <a href="/">Admin</a>
-                <a href="/">View Packages</a>
-                <a href="/">View Bookings</a>
+                <a href="/editprof">Admin</a>
+                <a href="/viewpackage">View Packages</a>
+                <a href="/viewbookings">View Bookings</a>
                 <input type="submit" value="Logout" className="btn btn-danger sidenav-btn mt-2" />
             </div>
         </>

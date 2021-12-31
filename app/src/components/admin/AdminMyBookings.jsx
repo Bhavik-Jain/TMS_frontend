@@ -1,25 +1,13 @@
-import {React, useState, useEffect} from 'react';
 import {FiEdit} from 'react-icons/fi';
-import "./admin_my_bookings.css";
-
+import "./styles/admin_my_bookings.css";
+import useFetch from './useFetch';
+import {Link} from 'react-router-dom';
 function Admin_View_Package(){
-    const [bookings, setbookings] = useState([])
-
-    useEffect(() => {
-           fetch('http://localhost:8000/bookings')
-           .then(res => {
-               return res.json();
-           })  
-           .then(data => {
-               setbookings(data);
-           })
-    }, []);
-
+    const { data: bookings, error} = useFetch('http://localhost:8000/bookings');
     return(
         <>
-            {/* <Sidenav /> */}
             <div className="container mt-5">
-                <h3 className='mt-3'>All Bookings</h3>
+                {bookings && <h3 className='mt-3'>All Bookings</h3>}
                 <hr />
                 <table className='table'>
                     <tbody>
@@ -31,6 +19,7 @@ function Admin_View_Package(){
                             <th>Status</th>
                             <th></th>
                         </tr>
+                        {error && <div>{error}</div>}
                         {bookings.map((bookings) => (
                             <tr>
                                 <td>
@@ -49,14 +38,13 @@ function Admin_View_Package(){
                                     {bookings.status}
                                 </td>
                                 <td>
-                                    <FiEdit />
+                                    <Link to="/editbook"><FiEdit /></Link>
                                 </td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
-                </div>
-            {/* </div> */}
+            </div>
         </>
     );
 }

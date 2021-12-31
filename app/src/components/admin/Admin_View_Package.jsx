@@ -1,15 +1,13 @@
-// import Sidenav from './Sidenav';
+import {Link} from "react-router-dom";
 import {React, useState, useEffect} from 'react';
 import { AiFillEye, AiTwotoneDelete } from 'react-icons/ai';
 import {FiEdit} from 'react-icons/fi';
-import {MdOutlineNightlightRound} from 'react-icons/md';
-import { WiDaySunny } from 'react-icons/wi';
-import "./admin_view_packages.css";
+import {IoIosCloudyNight} from 'react-icons/io';
+import { BsFillBrightnessAltHighFill } from 'react-icons/bs';
+import "./styles/admin_view_packages.css";
 
 function Admin_View_Package(){
-
     const [packages, setpackages] = useState([])
-
     useEffect(() => {
            fetch('http://localhost:8000/packages')
            .then(res => {
@@ -26,7 +24,7 @@ function Admin_View_Package(){
             <div className="container mt-5">
                 <div className='head'>
                         <h3>ALL PACKAGES</h3>
-                        <input type="button" value="Add" className='btn btn-primary'/>
+                        <Link to="/editpac/" className="btn btn-primary">Add</Link>
                 </div>
                 <hr />
                 <table className='table'>
@@ -36,7 +34,11 @@ function Admin_View_Package(){
                                 <td>
                                     <h3>{packages.name}</h3>
                                     <pre>
-                                        <p> <WiDaySunny /> {packages.days} <MdOutlineNightlightRound /> {packages.days}</p>
+                                        <p> <BsFillBrightnessAltHighFill style={{
+                                         color: "orange"
+                                         }} /> {packages.days} <IoIosCloudyNight style={{
+                                            color: "darkblue",
+                                            }} /> {packages.days}</p>
                                     </pre>
                                 </td>
                                 <td>
@@ -44,11 +46,16 @@ function Admin_View_Package(){
                                     <p>Status: {packages.status}</p>
                                 </td>
                                 <td>
-                                    <FiEdit />
+                                    <FiEdit style={{
+                                         color: "blue",
+                                         }} />
                                     <br></br>
-                                    <AiFillEye />
+                                    <Link to={`/packages/${packages.id}`}><AiFillEye style={{
+                                         color: "green",
+                                         }} /></Link>
                                     <br></br>
-                                    <AiTwotoneDelete />
+                                    <AiTwotoneDelete style={{color:
+                                    "darkred"}}/>
                                 </td>
                             </tr>
                         ))}
