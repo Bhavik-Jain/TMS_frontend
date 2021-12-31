@@ -16,16 +16,16 @@ function Signup()
                             <div className="card-body">
                                 <h2 className="card-title">Create Account</h2>
 
-                                <form className="mt-3">
-                                <input type="text" classNameName="form-cotrol mt-5 inpt" placeholder="Name" />
+                                <form>
+                                <input type="text" className="form-cotrol mt-2 inpt" placeholder="Name" />
 
-                                <input type="phone" className="form-cotrol mt-4 inpt" placeholder="Phone" />
+                                <input type="phone" className="form-cotrol mt-3 inpt" placeholder="Phone" />
                     
-                                <input type="text" className="form-cotrol mt-4 inpt" placeholder="Username" />
+                                <input type="text" className="form-cotrol mt-3 inpt" placeholder="Username" />
                                 
-                                <input type="Password" className="form-cotrol mt-4 inpt" placeholder="Password" />
+                                <input type="Password" className="form-cotrol mt-3 inpt" placeholder="Password" />
                                 <br />
-                                <button className="btn btn-sm btn-primary mt-4 button">Create Account</button>
+                                <button className="btn btn-sm btn-primary mt-3 button">Create Account</button>
                                 </form>
                                 <hr />
                                 <p>Already have an account? <a href="/">Login</a></p>

@@ -1,0 +1,10 @@
+.container{
+    max-width: 600px !important;
+}
+.form-group{
+    padding: 3px;
+}
+
+label{
+    font-weight: bold;
+}

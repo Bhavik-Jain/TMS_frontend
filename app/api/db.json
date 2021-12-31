@@ -1,0 +1,44 @@
+{
+  "bookings": [
+    {
+      "id": 1,
+      "cust_name": "Alisa",
+      "pack_name": "Shimla",
+      "date": "12/10/21",
+      "status": "complete"
+    },
+    {
+      "id": 2,
+      "cust_name": "Natasha",
+      "pack_name": "Rajasthan",
+      "date": "09/08/20",
+      "status": "complete"
+    }
+  ],
+  "packages": [
+    {
+      "id": 1,
+      "name": "Rajasthan",
+      "price": "5000",
+      "status": "approved",
+      "days": "3",
+      "nights": "2"
+    },
+    {
+      "id": 2,
+      "name": "Shimla",
+      "price": "5000",
+      "status": "approved",
+      "days": "3",
+      "nights": "2"
+    },
+    {
+      "id": 3,
+      "name": "Goa",
+      "price": "5000",
+      "status": "pending",
+      "days": "5",
+      "nights": "4"
+    }
+  ]
+}
