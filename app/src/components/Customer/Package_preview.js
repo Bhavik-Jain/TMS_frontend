@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-
+import  {useNavigate}  from "react-router-dom";
 import logo from "../../img/logo.jfif";
 import img1 from "../../img/1.jpg";
 import img2 from "../../img/2.jpg";
@@ -13,6 +13,10 @@ import "../../styles/package_details.css";
 import Dd from "./Dd";
 
 export default function Package_preview() {
+
+  let history = useNavigate();
+
+
   var settings = {
     dots: true,
     infinite: true,
@@ -86,6 +90,18 @@ export default function Package_preview() {
     },
   ]);
 
+  // handleBook=(event)=>{
+  //   event.preventDefault();
+  //   let id = { source: 1}
+  //   event.preventDefault();
+  //   props.history.push("/add_booking", {  });
+  // }
+
+  
+  // function handleBook() {
+  //   history.push("/add_booking");
+  // }
+
   return (
     <div>
       <div className="container-fluid bg-nav">
@@ -140,11 +156,13 @@ export default function Package_preview() {
             <hr /> <b>Days:</b> {package1[id].days} <b> Nights :</b>
             {package1[id].nights}
           </p>
-          <button className="bt-login btn btn-sm btn-primary button">
-            <a className="btn-link" href="/add_booking">
+          <a href="/add_booking">
+          <button  className="bt-login btn btn-sm btn-primary button">
+            
               Book Now
-            </a>
+            
           </button>
+          </a>
         </div>
       </div>
     </div>

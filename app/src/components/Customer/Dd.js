@@ -17,7 +17,7 @@ export default class Dd extends Component {
                     <Dropdown.Item href="/my_booking">
                         View Booking
                     </Dropdown.Item>
-                    <Dropdown.Item href="/hoamepage">
+                    <Dropdown.Item href="/">
                         Logout
                     </Dropdown.Item>
                     </Dropdown.Menu>
