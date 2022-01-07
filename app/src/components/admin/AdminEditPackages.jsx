@@ -1,6 +1,7 @@
 import "./styles/admin_edit_packages.css";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
+import Sidenav from "./Sidenav";
 
 function AdminEditPackages(){
     const [name, setName] = useState('');
@@ -27,6 +28,7 @@ function AdminEditPackages(){
     }
     return(
         <>
+            <Sidenav />
             <div className="container mt-5">
                 <h3 className="text-center">Edit Package</h3>
                 <div className="row">

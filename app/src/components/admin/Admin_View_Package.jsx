@@ -5,6 +5,7 @@ import {FiEdit} from 'react-icons/fi';
 import {IoIosCloudyNight} from 'react-icons/io';
 import { BsFillBrightnessAltHighFill } from 'react-icons/bs';
 import "./styles/admin_view_packages.css";
+import Sidenav from "./Sidenav";
 
 function Admin_View_Package(){
     const [packages, setpackages] = useState([])
@@ -20,7 +21,7 @@ function Admin_View_Package(){
 
     return(
         <>
-            {/* <Sidenav /> */}
+            <Sidenav />
             <div className="container mt-5">
                 <div className='head'>
                         <h3>ALL PACKAGES</h3>

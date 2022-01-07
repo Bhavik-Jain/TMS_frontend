@@ -1,8 +1,10 @@
+import Sidenav from "./Sidenav";
 import "./styles/admin_edit_packages.css";
 
 function Admin_edit_bookings(){
     return(
         <>
+            <Sidenav />
             <div className="container mt-5">
                 <h3 className="text-center">Edit Bookings</h3>
                 <div className="row">

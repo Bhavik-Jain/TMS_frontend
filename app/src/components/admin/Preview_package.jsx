@@ -1,14 +1,14 @@
-import {useParams} from "react-router-dom";
-import {React} from 'react';
-import useFetch from "./useFetch";
+// import {useParams} from "react-router-dom";
+// import {React} from 'react';
+// import useFetch from "./useFetch";
 
 function Preview_package(){
-    const {id} = useParams();
-    const { data: packages, error } = useFetch('http://localhost:8000/packages' + id);
+//     const {id} = useParams();
+//     const { data: packages, error } = useFetch('http://localhost:8000/packages' + id);
 
     return(
         <>
-            {packages && (
+            {/* {packages && (
                     <div className="container mt-5">
                         {error && <div>{error}</div>}          
                         <div className="row">
@@ -20,7 +20,7 @@ function Preview_package(){
                             </div>
                         </div>
                     </div>
-            )}
+            )} */}
         </>    
     );
 }

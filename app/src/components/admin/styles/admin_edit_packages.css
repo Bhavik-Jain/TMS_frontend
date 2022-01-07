@@ -1,5 +1,5 @@
 .container{
-    max-width: 500px !important;
+    max-width: 600px !important;
 }
 .form-group{
     padding: 5px;
@@ -9,9 +9,9 @@ label{
     font-weight: bold;
 }
 
-input, textarea, select{
+/* input, textarea, select{
     border: 1px solid #ddd !important;
-}
+} */
 
 .edt_prof{
     margin-left: auto;

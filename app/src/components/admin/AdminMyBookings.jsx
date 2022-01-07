@@ -2,10 +2,12 @@ import {FiEdit} from 'react-icons/fi';
 import "./styles/admin_my_bookings.css";
 import useFetch from './useFetch';
 import {Link} from 'react-router-dom';
+import Sidenav from './Sidenav';
 function Admin_View_Package(){
     const { data: bookings, error} = useFetch('http://localhost:8000/bookings');
     return(
         <>
+            <Sidenav />
             <div className="container mt-5">
                 {bookings && <h3 className='mt-3'>All Bookings</h3>}
                 <hr />
