@@ -13,10 +13,18 @@ import Admin_Profile from "./components/admin/Admin-Profile";
 import Admin_edit_bookings from "./components/admin/Admin_edit_bookings";
 import Preview_package from "./components/admin/Preview_package";
 
+import Homepage from './components/Customer/Homepage';
+import Login from './components/Customer/Login';
+import Homepage1 from './components/Customer/Homepage1';
+import Profile from './components/Customer/Profile';  
+import My_booking from './components/Customer/My_booking';
+import Add_booking from './components/Customer/Add_booking';
+import Package_details from './components/Customer/Package_details';
+import Package_preview from "./components/Customer/Package_preview";
 function App() {
   return (
     <>
-      <Link to="/signup">Signup</Link>
+      {/* <Link to="/signup">Signup</Link>
       <Link to="/sidenav">Sidenav</Link>
       <Link to="/viewpackage">viewpack</Link>
       <Link to="/viewbookings">viebookings</Link>
@@ -24,6 +32,7 @@ function App() {
       <Link to="/editprof">Editprofile</Link>
       <Link to="/editbook">EditBook</Link>
       <Link to="/packages">previewpac</Link>
+      <Link to="/">Homepage</Link> */}
       <Routes>
           <Route exact path='/signup' element={< Signup />}></Route>
           <Route exact path='/sidenav' element={< Sidenav />}></Route>
@@ -33,6 +42,18 @@ function App() {
           <Route exact path='/editprof' element={< Admin_Profile />}></Route>
           <Route exact path='/editbook' element={< Admin_edit_bookings />}></Route>
           <Route exact path='/packages/:id' element={< Preview_package />}></Route>
+          
+          {/* <Route exact path='/' element={<Homepage/>}  */}
+          <Route exact path='/' element={<Homepage/>}/>
+          <Route path='/login' element={<Login/>} />
+          <Route path='/signup' element={<Signup/>} />
+          <Route path='/homepage1' element={<Homepage1/>} />
+          <Route path='/profile' element={<Profile/>} />
+          <Route path='/package_details/:id' element={<Package_details/>} />
+          <Route path='/add_booking' element={<Add_booking/>} />
+          <Route path='/my_booking' element={<My_booking /> } />
+          <Route path='/package_preview/:id' element={<Package_preview/>} />
+          
       </Routes>
     </>
   );

@@ -1,0 +1,29 @@
+.main{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding: 90px 0 90px 0;
+    }
+  *{
+      /* background-color: white; */
+      font-family: sans-serif !important;
+    
+    
+  }
+    
+  .box{
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        max-width: 700px;
+  }
+  .inpt{
+      border: none;
+      outline: none;
+      border-bottom: 1px solid; 
+  }
+  /* .banner-img{
+      height: 30%;
+
+  } */
+  a{
+      color:blue !important;
+  }
