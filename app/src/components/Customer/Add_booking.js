@@ -6,6 +6,28 @@ import Dd from './Dd';
 
 
 export class Add_booking extends Component {  
+
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      taxes:20,
+      packages: [
+        {
+          name: "Rajasthan",
+          pacdetails:
+            "Rajasthan is a state in northern India. It covers 342,239 square kilometres or 10.4 percent of India's total geographical area. It is the largest Indian state by area and the seventh largest by population.",
+          price: "5000",
+          status: "approved",
+          days: "3",
+          nights: "2",
+          id: 1,
+        }
+      ],
+    };
+  }
+
+
     render() {  
         var settings = {  
           dots: true,  
@@ -63,15 +85,15 @@ export class Add_booking extends Component {
                         </tr>
                         <tr>
                           <td scope="row">Base Price</td>
-                          <td scope="row">XXXXX</td>
+                          <td scope="row">{this.state.packages[0].price}</td>
                         </tr>
                         <tr>
                           <td scope="row">Taxes</td>
-                          <td scope="row">XXXXX</td>
+                          <td scope="row">{this.state.taxes}</td>
                         </tr>
                         <tr>
                           <td scope="row">Total</td>
-                          <td scope="row">XXXXX</td>
+                          <td scope="row">{parseInt(this.state.packages[0].price) + this.state.taxes}</td>
                         </tr>
                       </tbody>
                     </table>
