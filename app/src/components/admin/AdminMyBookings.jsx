@@ -15,7 +15,7 @@ function Admin_View_Package(){
                     <tbody>
                         <tr>
                             <th>Booking Id</th>
-                            <th>Customer Name</th>
+                            <th>Customer Id</th>
                             <th>Package</th>
                             <th>Date</th>
                             <th>Status</th>

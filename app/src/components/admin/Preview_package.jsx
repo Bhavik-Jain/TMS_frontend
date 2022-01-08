@@ -8,19 +8,7 @@ function Preview_package(){
 
     return(
         <>
-            {/* {packages && (
-                    <div className="container mt-5">
-                        {error && <div>{error}</div>}          
-                        <div className="row">
-                            <div className="col-md-6">
-                                <p>{packages.name}</p>
-                            </div>
-                            <div className="col-md-6">
-                                <h1></h1>
-                            </div>
-                        </div>
-                    </div>
-            )} */}
+        
         </>    
     );
 }

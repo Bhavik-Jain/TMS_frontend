@@ -30,9 +30,6 @@ function App() {
       <Link to="/editprof">Editprofile</Link>
       <Link to="/editbook">EditBook</Link>
       <Link to="/packages">previewpac</Link>
-
-
-
       <Routes>
         <Route exact path='/login' element={< Login userLogin={userLogin} />}></Route>
         <Route exact path='/signup' element={< Signup />}></Route>

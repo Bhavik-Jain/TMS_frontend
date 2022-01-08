@@ -14,7 +14,7 @@ function Admin_View_Package(){
     // after that if state changes if any state change it will not run the function again but depends.
     useEffect(() => {
            fetch('http://127.0.0.1:8000/api/packages/',{
-            method: 'GET',        
+            // method: 'GET',        
             headers: {
             'Content-type': 'application/json',
             Authorization: `Token ${this.props.token}`
@@ -29,7 +29,6 @@ function Admin_View_Package(){
             })
     }, []);
     // dependency array
-
     return(
         <>
             <Sidenav />

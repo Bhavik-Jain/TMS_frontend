@@ -10,7 +10,6 @@ class Login extends Component
     }
     handleSubmit = (event) => {
         event.preventDefault();
-
         fetch('http://127.0.0.1:8000/login/', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
@@ -20,6 +19,7 @@ class Login extends Component
         .then(
             data => {
             console.log(data.token);
+            localStorage.setItem('token', data.token);
             }
         )
         .catch( error => console.error(error))

@@ -1,5 +1,4 @@
-
-   
+import { useNavigate } from "react-router-dom";
 import "./styles/sidenav.css";
 
 function Sidenav(){
@@ -9,7 +8,12 @@ function Sidenav(){
     const closeNav = () =>{
         document.getElementById('sidenav').style.width = "0";;
     }
-
+    const navigate = useNavigate();
+    
+    function logout(){
+        localStorage.clear();
+        navigate('/login');
+    }
     return(
         <>
             <header>
@@ -27,7 +31,7 @@ function Sidenav(){
                 <a href="/editprof">Admin</a>
                 <a href="/viewpackage">View Packages</a>
                 <a href="/viewbookings">View Bookings</a>
-                <input type="submit" value="Logout" className="btn btn-danger sidenav-btn mt-2" />
+                <input type="submit" value="Logout" className="btn btn-danger sidenav-btn mt-2" onClick={logout} />
             </div>
         </>
     );
