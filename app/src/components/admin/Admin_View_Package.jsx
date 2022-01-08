@@ -9,15 +9,26 @@ import Sidenav from "./Sidenav";
 
 function Admin_View_Package(){
     const [packages, setpackages] = useState([])
+
+    // useEffect will take empty array so that it only run the function for initial render 
+    // after that if state changes if any state change it will not run the function again but depends.
     useEffect(() => {
-           fetch('http://localhost:8000/packages')
-           .then(res => {
-               return res.json();
-           })  
-           .then(data => {
-               setpackages(data);
-           })
+           fetch('http://127.0.0.1:8000/api/packages/',{
+            method: 'GET',        
+            headers: {
+            'Content-type': 'application/json',
+            Authorization: `Token ${this.props.token}`
+               }
+           }).then(res => {
+                return res.json();
+            })  
+            .then(data => {
+                //    update the packages state by taking data
+                setpackages(data);
+                console.log(data);
+            })
     }, []);
+    // dependency array
 
     return(
         <>
@@ -62,8 +73,7 @@ function Admin_View_Package(){
                         ))}
                     </tbody>
                 </table>
-                </div>
-            {/* </div> */}
+            </div>
         </>
     );
 }

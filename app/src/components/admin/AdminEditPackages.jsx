@@ -5,7 +5,7 @@ import Sidenav from "./Sidenav";
 
 function AdminEditPackages(){
     const [name, setName] = useState('');
-    const [pacdetails, setPacdetails] = useState('');
+    const [details, setPacdetails] = useState('');
     const [price, setPrice] = useState('');
     const [days, setDays] = useState('');
     const [nights, setNights] = useState('');
@@ -15,11 +15,14 @@ function AdminEditPackages(){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const pack = {name, pacdetails, price, days, nights, status};
+        const pack = {name, details, price, days, nights, status};
         // headers telling browser the type of data we are sending i.e, post
-        fetch('http://localhost:8000/packages', {
+        fetch('http://127.0.0.1:8000/api/packages/', {
             method: 'POST',
-            headers: {'Content-Type': 'application/json'},
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Token ${this.props.token}`
+            },
             body: JSON.stringify(pack)
         }).then(() => {
             console.log('new package added');
@@ -34,7 +37,7 @@ function AdminEditPackages(){
                 <div className="row">
                     <div className="card">
                         <div className="card-body">
-                            <form onSubmit={handleSubmit}>
+                            <form>
                             <div className="form-group">
                                 <label htmlFor="name">Package Name</label>
                                 <input 
@@ -53,7 +56,7 @@ function AdminEditPackages(){
                                     <label htmlFor="pd">Package Details</label>
                                     <textarea 
                                         class="form-control"
-                                        value={pacdetails}
+                                        value={details}
                                         id="pd" rows="1"
                                         onChange={(e) => setPacdetails(e.target.value)} >
                                          </textarea>
@@ -95,7 +98,7 @@ function AdminEditPackages(){
                                     </select>
                                 </div>
                                 <div className="form-group">
-                                    <button className="btn btn-primary">Submit</button>
+                                    <button className="btn btn-primary" onClick={handleSubmit}>Submit</button>
                                 </div>                         
                             </form>
                         </div>

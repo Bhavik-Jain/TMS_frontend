@@ -4,7 +4,7 @@ import useFetch from './useFetch';
 import {Link} from 'react-router-dom';
 import Sidenav from './Sidenav';
 function Admin_View_Package(){
-    const { data: bookings, error} = useFetch('http://localhost:8000/bookings');
+    const { data: bookings, error} = useFetch('http://127.0.0.1:8000/api/bookings/');
     return(
         <>
             <Sidenav />
@@ -28,10 +28,10 @@ function Admin_View_Package(){
                                     {bookings.id}
                                 </td>
                                 <td>
-                                    {bookings.cust_name}
+                                    {bookings.user}
                                 </td>
                                 <td>
-                                    {bookings.pack_name}
+                                    {bookings.package}
                                 </td>
                                 <td>
                                     {bookings.date}

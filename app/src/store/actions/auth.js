@@ -72,7 +72,6 @@ export const authSignup = (username, email, password) =>{
         // object username and password as been passed to the post request 
         axios.post('http://127.0.0.1:8000/api/users/',{
             username: username,
-            email: email,
             password: password
         })
         .then(res => {
